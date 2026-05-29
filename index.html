@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Subha 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+overflow:hidden;
+background:black;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100vh;
+top:0;
+left:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+transition:1s;
+padding:20px;
+overflow:hidden;
+}
+
+.active{
+left:0;
+}
+
+.prev{
+left:-100%;
+}
+
+button{
+padding:15px 35px;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+background:#ff4da6;
+color:white;
+margin-top:30px;
+box-shadow:0 0 20px rgba(255,255,255,0.5);
+}
+
+h1,h2,p{
+color:white;
+text-align:center;
+}
+
+.slide1{
+background:linear-gradient(135deg,#ff6a88,#ff99ac);
+}
+
+.slide2{
+background:linear-gradient(135deg,#6a11cb,#2575fc);
+}
+
+.slide3{
+background:linear-gradient(135deg,#ff512f,#dd2476);
+}
+
+.slide4{
+background:linear-gradient(135deg,#00c9ff,#92fe9d);
+}
+
+.slide5{
+background:linear-gradient(135deg,#fc466b,#3f5efb);
+}
+
+.slide6{
+background:linear-gradient(135deg,#141e30,#243b55);
+}
+
+.slide7{
+background:linear-gradient(135deg,#ff9966,#ff5e62);
+}
+
+.balloons{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+overflow:hidden;
+}
+
+.balloon{
+position:absolute;
+bottom:-100px;
+width:60px;
+height:80px;
+border-radius:50%;
+animation:float 10s linear infinite;
+opacity:0.7;
+}
+
+.balloon:nth-child(1){
+left:10%;
+background:red;
+}
+
+.balloon:nth-child(2){
+left:30%;
+background:yellow;
+}
+
+.balloon:nth-child(3){
+left:50%;
+background:blue;
+}
+
+.balloon:nth-child(4){
+left:70%;
+background:green;
+}
+
+.balloon:nth-child(5){
+left:90%;
+background:pink;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+}
+100%{
+transform:translateY(-120vh);
+}
+}
+
+.calendar{
+background:white;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+color:black;
+width:320px;
+}
+
+.calendar table{
+width:100%;
+text-align:center;
+}
+
+.calendar td{
+padding:10px;
+}
+
+.bday{
+background:#ff4da6;
+color:white;
+border-radius:50%;
+}
+
+.cake{
+position:relative;
+width:260px;
+height:180px;
+background:#ffb347;
+border-radius:20px;
+margin-top:40px;
+}
+
+.candle{
+position:absolute;
+width:20px;
+height:80px;
+background:white;
+top:-80px;
+left:50%;
+transform:translateX(-50%);
+}
+
+.flame{
+position:absolute;
+width:25px;
+height:25px;
+background:orange;
+border-radius:50%;
+top:-25px;
+left:50%;
+transform:translateX(-50%);
+animation:flicker 0.2s infinite alternate;
+}
+
+@keyframes flicker{
+from{
+transform:translateX(-50%) scale(1);
+}
+to{
+transform:translateX(-50%) scale(1.15);
+}
+}
+
+.hidden{
+display:none;
+}
+
+.memory-box{
+width:300px;
+height:380px;
+background:rgba(255,255,255,0.15);
+border:4px dashed white;
+border-radius:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:25px;
+margin-top:20px;
+backdrop-filter:blur(5px);
+}
+
+.comment{
+margin-top:20px;
+font-size:22px;
+font-weight:600;
+text-align:center;
+max-width:500px;
+}
+
+.fireworks{
+position:absolute;
+width:100%;
+height:100%;
+background:url('https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif') center/cover;
+opacity:0.3;
+pointer-events:none;
+}
+
+.music-btn{
+position:fixed;
+top:15px;
+right:15px;
+z-index:999;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="music-btn">
+<button onclick="toggleMusic()">🎵 Music</button>
+</div>
+
+<audio id="bgMusic" autoplay loop>
+<source src="" type="audio/mpeg">
+</audio>
+
+<!-- SLIDE 1 -->
+<section class="slide slide1 active">
+
+<div class="balloons">
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+</div>
+
+<h1 style="font-size:60px;">🎁 Digital Surprise 🎁</h1>
+
+<p style="margin-top:20px;font-size:24px;">
+Tap below to reveal your surprise 💖
+</p>
+
+<button onclick="nextSlide()">TAP TO REVEAL ✨</button>
+
+</section>
+
+<!-- SLIDE 2 -->
+<section class="slide slide2">
+
+<div class="fireworks"></div>
+
+<h1 style="font-size:55px;">
+Happy Birthday Subha 🎂
+</h1>
+
+<div class="memory-box">
+YOUR PHOTO HERE 📸
+</div>
+
+<div class="calendar">
+
+<h2>June 2026</h2>
+
+<table>
+<tr>
+<th>Sun</th>
+<th>Mon</th>
+<th>Tue</th>
+<th>Wed</th>
+<th>Thu</th>
+<th>Fri</th>
+<th>Sat</th>
+</tr>
+
+<tr>
+<td></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td class="bday">6 🎂</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+</tr>
+
+</table>
+
+</div>
+
+<button onclick="nextSlide()">Next ➜</button>
+
+</section>
+
+<!-- SLIDE 3 -->
+<section class="slide slide3">
+
+<h1 style="font-size:55px;">Make A Wish ✨</h1>
+
+<div class="cake">
+
+<div class="candle">
+<div class="flame" id="flame"></div>
+</div>
+
+</div>
+
+<p style="margin-top:20px;font-size:22px;">
+Blow into microphone 🌬 to extinguish candle
+</p>
+
+<button onclick="startMic()">🎤 Start Microphone</button>
+
+<button onclick="nextSlide()">Next ➜</button>
+
+</section>
+
+<!-- SLIDE 4 -->
+<section class="slide slide4">
+
+<div class="fireworks"></div>
+
+<h1 style="font-size:60px;">
+🎉 Happy Birthday Subha 🎉
+</h1>
+
+<p style="margin-top:20px;font-size:24px;">
+May your smile always stay this cute and bright 💖
+</p>
+
+<p style="margin-top:20px;font-size:20px;">
+WRITE YOUR PERSONAL MESSAGE HERE ❤️
+</p>
+
+<button onclick="nextSlide()">Next ➜</button>
+
+</section>
+
+<!-- SLIDE 5 -->
+<section class="slide slide5">
+
+<h1 style="font-size:55px;">
+Beautiful Memories 💕
+</h1>
+
+<div class="memory-box" id="memoryBox">
+MEMORY PHOTO HERE 📸
+</div>
+
+<div class="comment" id="comment">
+“When the whole squad tries to act innocent 😂”
+</div>
+
+<button onclick="nextSlide()">Next ➜</button>
+
+</section>
+
+<!-- SLIDE 6 -->
+<section class="slide slide6">
+
+<h1 style="font-size:55px;">
+🎬 Special Video
+</h1>
+
+<div class="memory-box">
+VIDEO HERE 🎥
+</div>
+
+<p style="margin-top:20px;">
+Add your video later
+</p>
+
+<button onclick="nextSlide()">Next ➜</button>
+
+</section>
+
+<!-- SLIDE 7 -->
+<section class="slide slide7">
+
+<div class="fireworks"></div>
+
+<h1 style="font-size:65px;">
+THANK YOU 💖
+</h1>
+
+<p style="margin-top:20px;font-size:24px;">
+Thank you for being part of beautiful memories ✨
+</p>
+
+<p style="margin-top:20px;font-size:22px;">
+Made with ❤️ for Subha
+</p>
+
+</section>
+
+<script>
+
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+function nextSlide(){
+
+slides[currentSlide].classList.remove("active");
+slides[currentSlide].classList.add("prev");
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+currentSlide = slides.length - 1;
+}
+
+slides[currentSlide].classList.add("active");
+
+}
+
+function toggleMusic(){
+
+const music = document.getElementById("bgMusic");
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+
+}
+
+function startMic(){
+
+navigator.mediaDevices.getUserMedia({audio:true})
+
+.then(function(stream){
+
+const audioContext = new AudioContext();
+
+const microphone = audioContext.createMediaStreamSource(stream);
+
+const analyser = audioContext.createAnalyser();
+
+microphone.connect(analyser);
+
+const dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+function detectBlow(){
+
+analyser.getByteFrequencyData(dataArray);
+
+let volume = dataArray.reduce((a,b)=>a+b)/dataArray.length;
+
+if(volume > 45){
+
+document.getElementById("flame").classList.add("hidden");
+
+}
+
+requestAnimationFrame(detectBlow);
+
+}
+
+detectBlow();
+
+});
+
+}
+
+const comments = [
+
+"Room full of chaos but still photogenic 😂",
+
+"Friendship level: Taking 500 selfies for one good photo 📸",
+
+"When everyone says serious pose but laughter wins 🤣",
+
+"The squad that can never stay quiet 😭",
+
+"Traditional look + cute smile = dangerous combo ✨"
+
+];
+
+let commentIndex = 0;
+
+setInterval(()=>{
+
+commentIndex++;
+
+if(commentIndex >= comments.length){
+commentIndex = 0;
+}
+
+document.getElementById("comment").innerText = comments[commentIndex];
+
+},3000);
+
+</script>
+
+</body>
+  </html>
